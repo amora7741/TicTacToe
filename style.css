@@ -40,4 +40,9 @@ body {
 .cell {
     border-radius: var(--rounded-corners);
     border: 1px solid rgb(85, 72, 119);
+    cursor: pointer;
+}
+
+.cell:hover {
+    background-color: rgba(85, 72, 119, 0.087);
 }
