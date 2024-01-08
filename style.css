@@ -1,12 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+:root {
+    --grid-size: 500px;
+    --rounded-corners: 10px;
+}
+
 * {
     margin: 0;
     padding: 0;
 }
 
 body {
-    background-color: aquamarine;
+    background-color: rgb(32, 26, 47);
     font-family: 'Roboto', sans-serif;
 }
 
@@ -20,4 +25,19 @@ body {
 
 .container h1 {
     font-size: 3rem;
+    color: white;
+}
+
+.gridarea {
+    height: var(--grid-size);
+    width: var(--grid-size);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.cell {
+    border-radius: var(--rounded-corners);
+    border: 1px solid rgb(85, 72, 119);
 }
