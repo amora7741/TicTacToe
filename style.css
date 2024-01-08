@@ -3,6 +3,7 @@
 :root {
     --grid-size: 500px;
     --rounded-corners: 10px;
+    --outline: rgb(85, 72, 119);
 }
 
 * {
@@ -25,7 +26,8 @@ body {
 
 .container h1 {
     font-size: 3rem;
-    color: white;
+    -webkit-text-stroke: 1px var(--outline);
+    color: transparent;
 }
 
 .gridarea {
@@ -39,7 +41,7 @@ body {
 
 .cell {
     border-radius: var(--rounded-corners);
-    border: 1px solid rgb(85, 72, 119);
+    border: 1px solid var(--outline);
     cursor: pointer;
     display: flex;
     align-items: center;
