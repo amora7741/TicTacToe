@@ -3,7 +3,7 @@
 :root {
     --grid-size: 500px;
     --rounded-corners: 10px;
-    --outline: rgb(85, 72, 119);
+    --outline: rgb(172, 163, 194);
 }
 
 * {
@@ -12,7 +12,7 @@
 }
 
 body {
-    background-color: rgb(32, 26, 47);
+    background-color: rgb(70, 66, 80);
     font-family: 'Roboto', sans-serif;
 }
 
@@ -51,5 +51,5 @@ body {
 }
 
 .cell:hover {
-    background-color: rgba(85, 72, 119, 0.087);
+    background-color: rgba(41, 39, 44, 0.087);
 }
