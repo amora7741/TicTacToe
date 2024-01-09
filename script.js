@@ -58,8 +58,8 @@ const Game = (() => {
                     alert("It's a tie!");
                     resetGame();
                     DisplayController.renderBoard();
-            }, 10);
-          } 
+                }, 10);
+            } 
             else {
                 switchPlayer();
             }
@@ -105,13 +105,9 @@ const DisplayController = (() => {
   
     cells.forEach((cell, index) => {
       cell.addEventListener('click', () => {
-        if (Game.playTurn(index)) {
-          renderBoard();
-        }
+        Game.playTurn(index);
       });
     });
   
     return { renderBoard };
   })();
-  
-  DisplayController.renderBoard();
