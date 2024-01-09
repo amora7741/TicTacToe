@@ -1,6 +1,8 @@
 const closeButton = document.querySelector(".close");
 const modalContainer = document.querySelector(".modalcontainer");
 const resetButton = document.querySelector("#retry");
+const winner = document.querySelector(".modalheader");
+const modalImage = document.querySelector(".modalimage");
 
 closeButton.addEventListener("click", () => {
   closeModal();
@@ -68,12 +70,16 @@ const Game = (() => {
 
             if (checkWin()) {
                 setTimeout(() => {
+                  winner.textContent = `${currentPlayer.name} wins!`
+                  modalImage.src = currentPlayer.name === "Player 1" ? "./images/w.webp" : "./images/l.png";
                   modalContainer.style.display = "flex";
                 }, 10);
             } 
             else if (checkTie()) {
                 setTimeout(() => {
-                    alert("It's a tie!");
+                  winner.textContent = "It's a tie!"
+                  modalImage.src = "";
+                  modalContainer.style.display = "flex";
                 }, 10);
             } 
             else {
