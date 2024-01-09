@@ -56,7 +56,7 @@ body {
 }
 
 .modalcontainer {
-    display: none;
+    display: block;
 }
 
 .modal {
@@ -73,10 +73,37 @@ body {
 
 .modalcontent {
     background-color: var(--background-color);
-    padding: 10px;
+    padding: 30px;
     border-radius: var(--rounded-corners);
     color: var(--outline);
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.modalimage {
+    width: 250px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.close {
+    background-color: transparent;
+    border: none;
+    align-self: flex-end;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+button {
+    border: 2px solid var(--outline);
+    padding: 5px 20px;
+    font-size: 1rem;
+    border-radius: var(--rounded-corners);
+    background-color: transparent;
+    color: var(--outline);
+    font-weight: bold;
+    cursor: pointer;
 }
