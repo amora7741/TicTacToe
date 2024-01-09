@@ -1,3 +1,10 @@
+const closeButton = document.querySelector(".close");
+const modalContainer = document.querySelector(".modalcontainer");
+
+closeButton.addEventListener("click", () => {
+  modalContainer.style.display = "none";
+});
+
 const Gameboard = (() => {
     let board = ['', '', '', '', '', '', '', '', ''];
   
