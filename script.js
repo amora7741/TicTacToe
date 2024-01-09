@@ -14,6 +14,8 @@ resetButton.addEventListener("click", () => {
 
 const closeModal = () => {
   modalContainer.style.display = "none";
+  modalContainer.querySelector('.modal').style.animation = '';
+  modalContainer.querySelector('.modalimage').style.animation = '';
 };
 
 const Gameboard = (() => {
@@ -66,7 +68,7 @@ const Game = (() => {
 
             if (checkWin()) {
                 setTimeout(() => {
-                  modalContainer.style.display = "block";
+                  modalContainer.style.display = "flex";
                 }, 10);
             } 
             else if (checkTie()) {
