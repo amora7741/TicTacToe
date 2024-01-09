@@ -56,7 +56,7 @@ body {
 }
 
 .modalcontainer {
-    display: block;
+    display: none;
 }
 
 .modal {

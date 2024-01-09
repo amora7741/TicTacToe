@@ -1,9 +1,20 @@
 const closeButton = document.querySelector(".close");
 const modalContainer = document.querySelector(".modalcontainer");
+const resetButton = document.querySelector("#retry");
 
 closeButton.addEventListener("click", () => {
-  modalContainer.style.display = "none";
+  closeModal();
 });
+
+resetButton.addEventListener("click", () => {
+  Game.resetGame();
+  DisplayController.renderBoard();
+  closeModal();
+});
+
+const closeModal = () => {
+  modalContainer.style.display = "none";
+};
 
 const Gameboard = (() => {
     let board = ['', '', '', '', '', '', '', '', ''];
@@ -55,16 +66,12 @@ const Game = (() => {
 
             if (checkWin()) {
                 setTimeout(() => {
-                    alert(`${currentPlayer.name} wins!`);
-                    resetGame();
-                    DisplayController.renderBoard();
+                  modalContainer.style.display = "block";
                 }, 10);
             } 
             else if (checkTie()) {
                 setTimeout(() => {
                     alert("It's a tie!");
-                    resetGame();
-                    DisplayController.renderBoard();
                 }, 10);
             } 
             else {
