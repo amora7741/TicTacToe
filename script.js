@@ -45,7 +45,7 @@ const Player = (name, symbol) => {
   
 const Game = (() => {
     const playerX = Player('Player 1', 'X');
-    const playerO = Player('Player 2', 'O');
+    const playerO = Player('Bot', 'O');
 
     const winConditions = [
         [0, 1, 2],
@@ -62,6 +62,19 @@ const Game = (() => {
   
     const switchPlayer = () => {
         currentPlayer = currentPlayer === playerX ? playerO : playerX;
+        if(currentPlayer === playerO) {
+          botPlay();
+        }
+    };
+
+    const botPlay = () => {
+      let availableCells = Gameboard.getBoard().map((cell, index) => cell === '' ? index : null).filter(val => val !== null);
+      if (availableCells.length > 0) {
+        setTimeout(() => {
+          let randomCellIndex = availableCells[Math.floor(Math.random() * availableCells.length)];
+          playTurn(randomCellIndex);
+        }, 200);
+      }
     };
   
     const playTurn = (cellIndex) => {
